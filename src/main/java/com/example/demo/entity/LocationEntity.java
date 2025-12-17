@@ -4,46 +4,45 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "location")
 public class LocationEntity {
-@Id
+   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Double latitude;
-    private Double longitude;
-    public LocationEntity() {
-    }
-    public LocationEntity(String name, Double latitude, Double longitude) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
+    private Double latitudue;
+    private double longitude;
     public Long getId() {
         return id;
     }
-public void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
- public String getName() {
+    public String getName() {
         return name;
     }
-public void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
-public Double getLatitude() {
-        return latitude;
+    public Double getLatitudue() {
+        return latitudue;
     }
-public void setLatitude(Double latitude) {
-        this.latitude = latitude;
+    public void setLatitudue(Double latitudue) {
+        this.latitudue = latitudue;
     }
- public Double getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
-public void setLongitude(Double longitude) {
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+    public LocationEntity() {
+    }
+    public LocationEntity(Long id, String name, Double latitudue, double longitude) {
+        this.id = id;
+        this.name = name;
+        this.latitudue = latitudue;
         this.longitude = longitude;
     }
 }
