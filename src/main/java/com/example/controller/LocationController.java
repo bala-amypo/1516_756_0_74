@@ -1,8 +1,11 @@
-@RestController
-public class ServiceController{
-    @Autowired
-    LocationService locationservice;
-    @PostMapping("/addlocation");
-    public LocationEntity add(@RequestBody LocationEntity)
+package com.example.demo.service;
 
+import java.util.List;
+
+import com.example.demo.entity.LocationEntity;
+
+public interface LocationService {
+    LocationEntity createlocation(LocationEntity locationEntity);
+    List<LocationEntity>getallLocation();
+    
 }
